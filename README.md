@@ -30,3 +30,11 @@ Now, you can create the random forest model.  If you set the random number gener
 set.seed(10203040)
 final_rf_model = ranger(critical_temp ~ ., data = train, mtry = 10, min.node.size = 1, num.trees = 1000)
 ```
+
+Start predicting.  Try these two:
+```r
+predict_tc("Ba0.2La1.8Cu1O4", verbose = TRUE)
+predict_tc("MgB2")
+```
+Setting ```verbose = TRUE``` will find material similar to the one you entered.
+
