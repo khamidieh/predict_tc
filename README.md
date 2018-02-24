@@ -24,3 +24,9 @@ Run:
 ```r
 load("auxiliary.RData")
 ```
+
+Now, you can create the random forest model.  If you set the random number generator to the seed below, you'll get the same results that I do.  The following command will take 2-3 minutes to run.
+```r
+set.seed(10203040)
+final_rf_model = ranger(critical_temp ~ ., data = train, mtry = 10, min.node.size = 1, num.trees = 1000)
+```
