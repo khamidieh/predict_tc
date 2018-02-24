@@ -15,4 +15,12 @@ library(CHNOSZ)
 ```
 
 Next, download the file auxiliary.RData.  Make sure you know where in your computer you downloaded this file.  This file contains all the data and auxiliary functions to create the prediction model.
-Please read this next line carefully: **MAKE SURE YOUR R SESSION'S WORKING DIRECTORY IS SET TO WHERE YOU DOWNLOADED THIS FILE**.  You can do this in two ways: (1) Go to R Console, then go to menu path File, and then to "Change dir...", or (2) use ```r setwd ``` command.  (I do not use RStudio.)
+
+Please read this next line carefully: **MAKE SURE YOUR R SESSION'S WORKING DIRECTORY IS SET TO WHERE YOU DOWNLOADED THIS FILE**.  
+
+You can do this in two ways: (1) Go to R Console, then go to menu path File, and then to "Change dir...", or (2) use ```setwd ``` command.  (I do not use RStudio.)
+
+Run:
+```r
+load("auxiliary.RData")
+```
