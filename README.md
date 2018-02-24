@@ -1,5 +1,7 @@
 # Predict the Critical Temperature of a Superconductor
 
+**Warning:**  You are wasting your time reading this readme file unless you have looked at the paper first.
+
 The first thing you need to do is to make sure you have installed R.  Go to https://cloud.r-project.org/ to install the latest version of R.
 
 You need two R packages.  Open up the R gui and run the following command.  If a pop up window opens up with title "Secure CRAN mirror", just pick "0-Cloud [https]" and hit OK.  
@@ -14,7 +16,7 @@ library(ranger)
 library(CHNOSZ)
 ```
 
-Next, download the file auxiliary.RData.  Make sure you know where in your computer you downloaded this file.  This file contains all the data and auxiliary functions to create the prediction model.
+Next, download the file auxiliary.RData posted here in github.  Make sure you know where in your computer you downloaded this file.  This file contains all the data and auxiliary functions to create the prediction model.
 
 Please read this next line carefully: **MAKE SURE YOUR R SESSION'S WORKING DIRECTORY IS SET TO WHERE YOU DOWNLOADED THIS FILE**.  
 
@@ -38,3 +40,16 @@ predict_tc("MgB2")
 ```
 Setting ```verbose = TRUE``` will find material similar to the one you entered.
 
+You probably don't want to recreate the random forest model every time.  You can save it and reuse.  Just one warning, the file size will be big.  Do this:
+```r
+save.image("my_predictor.RData")
+```
+The object ```my_predictor.RData``` saved to your local drive will now have the ```predict_tc``` function in it.
+
+The next time you want to predict, run the following (making sure your path is set correctly):
+```r
+load("my_predictor.RData")
+library(ranger)
+library(CHNOSZ)
+```
+After running the three lines about, you can use ```predict_tc```.
