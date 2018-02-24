@@ -2,7 +2,7 @@
 
 **Warning:**  *You are wasting your time reading this readme file unless you have looked at the paper first.*
 
-The first thing you need to do is to make sure you have installed R.  Go to https://cloud.r-project.org/ to install the latest version of R.
+Go to https://cloud.r-project.org/ to install the latest version of R.
 
 You need two R packages.  Open up the R gui and run the following command.  If a pop up window opens up with title "Secure CRAN mirror", just pick "0-Cloud [https]" and hit OK.  
 ```r
