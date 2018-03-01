@@ -50,13 +50,13 @@ Start predicting.  Try these:
 predict_tc("Ba0.2La1.8Cu1O4", verbose = TRUE)
 predict_tc("MgB2")
 predict_tc("Hg")
-predict_tc("Ca0.5Sr0.5C6", verbose = T)
-predict_tc("NaSn2As2", verbose = T)
-predict_tc("H2S", verbose = T)
-predict_tc("FCl", verbose = T)
-predict_tc("mgB2", verbose = T)
+predict_tc("Ca0.5Sr0.5C6", verbose = TRUE)
+predict_tc("NaSn2As2", verbose = TRUE)
+predict_tc("H2S", verbose = TRUE)
+predict_tc("FCl", verbose = TRUE)
+predict_tc("mgB2", verbose = TRUE)
 ```
-Setting ```verbose = TRUE``` will find materials similar to the one you entered.
+Setting ```verbose = TRUE``` will find materials similar to the one you entered.  The default is false.
 
 
 **Step (6)**
