@@ -2,7 +2,7 @@
 
 For detailed information about this project please see my paper at:
 
-This readme file shows you how to set up and make predictions.  Step (6) says how to download the data.  If you want to just download the data, you can skip step 5.
+This readme file shows you how to set up and make predictions.  Step (6) shows you how to download the data.  If you just want to  download the data, run steps 1 through 4, skip step 5, and then go to step 6.
 
 ------------------------------------------------------------------------------------------------------------------------------------
 
@@ -19,18 +19,18 @@ You only need to run the above command once unless you download a new R version.
 
 
 **Step (3)** 
-You need to make the R packages available to your current R session.  You need to do this EVERY time you want to use these packages:
+You need to make the R packages available to your current R session.  You need to do this EVERY time you want to use these packages.  At prompt run:
 ```r
 library(ranger)
 library(CHNOSZ)
 ```
 
 **Step (4)** 
-Next, download the file `tc.RData` posted here in github.  Make sure you know where in your computer you downloaded this file.  This file contains all the data and auxiliary functions to create the prediction model.
+Next, download the file `tc.RData` which is posted here in github.  Make sure you know where in your computer you downloaded this file.  This file contains all the data and auxiliary functions to do the predictions.
 
 *Important: Make sure your R session's working directory is set to where you downloaded `tc.RData`.*
 
-You can do this in two ways: (1) Go to R Console, then go to menu path File, and then to "Change dir...", or (2) use ```setwd() ``` command.  (I do not use RStudio.)
+You can do this in two ways: (1) Go to the R Console, then go to menu path File, and then to "Change dir...", or (2) use ```setwd() ``` command.  (I do not use RStudio.)
 
 Once your directory is set properly run:
 ```r
