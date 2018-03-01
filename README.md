@@ -32,7 +32,7 @@ One more time: You need to do this *EVERY* time you start a new R session.
 
 **Step (4)** 
 
-Next, download the file `tc.RData` which is posted here in github.  Make sure you know where in your computer you downloaded this file.  This file contains all the data and auxiliary functions to do the predictions.
+Next, download the file `tc.RData` which is posted here in github (https://github.com/khamidieh/predict_tc).  Make sure you know where in your computer you downloaded this file.  This file contains all the data and auxiliary functions to do the predictions.
 
 *Important: Make sure your R session's working directory is set to where you downloaded `tc.RData`.*
 
