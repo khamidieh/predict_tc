@@ -2,15 +2,17 @@
 
 For detailed information about this project please see my paper at:
 
-This readme file shows you how to set up and make predictions.  Step (6) shows you how to download the data.  If you just want to  download the data, run steps 1 through 4, skip step 5, and then go to step 6.
+This readme file shows you how to set up and make predictions.  Step (6) shows you how to download the data.  If you just want to  download the data, just run step (1), (4), and (6).
 
 ------------------------------------------------------------------------------------------------------------------------------------
 
 **Step (1)** 
+
 Go to https://cloud.r-project.org/ to install the latest version of R.
 
 
 **Step (2)** 
+
 Once R has been installed, you need two R packages.  Open up the R gui and run the following command.  If a pop up window opens up with the title "Secure CRAN mirror", just pick "0-Cloud [https]" and hit OK.  
 ```r
 install.packages(c("ranger","CHNOSZ"))
@@ -19,13 +21,17 @@ You only need to run the above command once unless you download a new R version.
 
 
 **Step (3)** 
-You need to make the R packages available to your current R session.  You need to do this EVERY time you want to use these packages.  At prompt run:
+
+You need to make the R packages available to your current R session.  You need to do this *EVERY* time you start a new R session.  At prompt run:
 ```r
 library(ranger)
 library(CHNOSZ)
 ```
+You need to do this *EVERY* time you start a new R session.
+
 
 **Step (4)** 
+
 Next, download the file `tc.RData` which is posted here in github.  Make sure you know where in your computer you downloaded this file.  This file contains all the data and auxiliary functions to do the predictions.
 
 *Important: Make sure your R session's working directory is set to where you downloaded `tc.RData`.*
@@ -38,6 +44,7 @@ load("tc.RData")
 ```
 
 **Step (5)** 
+
 Start predicting.  Try these:
 ```r
 predict_tc("Ba0.2La1.8Cu1O4", verbose = TRUE)
@@ -51,7 +58,9 @@ predict_tc("mgB2", verbose = T)
 ```
 Setting ```verbose = TRUE``` will find materials similar to the one you entered.
 
+
 **Step (6)**
+
 Run the following to get the train data.  This train data was used to create the XGBoost model.
 ```r
 write.csv(train, "train.csv", row.names = F)
