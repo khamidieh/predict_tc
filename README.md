@@ -1,55 +1,64 @@
 # Predict the Critical Temperature of a Superconductor
 
-**Warning:**  *You are wasting your time reading this readme file unless you have looked at the paper first.*
+For detailed information about this project please see my paper at:
 
+This readme file shows you how to set up and make predictions.  Step (6) says how to download the data.  If you want to just download the data, you can skip step 5.
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+**Step (1)** 
 Go to https://cloud.r-project.org/ to install the latest version of R.
 
-You need two R packages.  Open up the R gui and run the following command.  If a pop up window opens up with title "Secure CRAN mirror", just pick "0-Cloud [https]" and hit OK.  
+
+**Step (2)** 
+Once R has been installed, you need two R packages.  Open up the R gui and run the following command.  If a pop up window opens up with the title "Secure CRAN mirror", just pick "0-Cloud [https]" and hit OK.  
 ```r
 install.packages(c("ranger","CHNOSZ"))
 ```
 You only need to run the above command once unless you download a new R version.
 
-Make these packages available to your current R session.  You need to do this EVERY time you want to use these packages:
+
+**Step (3)** 
+You need to make the R packages available to your current R session.  You need to do this EVERY time you want to use these packages:
 ```r
 library(ranger)
 library(CHNOSZ)
 ```
 
-Next, download the file auxiliary.RData posted here in github.  Make sure you know where in your computer you downloaded this file.  This file contains all the data and auxiliary functions to create the prediction model.
+**Step (4)** 
+Next, download the file `tc.RData` posted here in github.  Make sure you know where in your computer you downloaded this file.  This file contains all the data and auxiliary functions to create the prediction model.
 
-**MAKE SURE YOUR R SESSION'S WORKING DIRECTORY IS SET TO WHERE YOU DOWNLOADED THIS FILE**.  
+*Important: Make sure your R session's working directory is set to where you downloaded `tc.RData`.*
 
-You can do this in two ways: (1) Go to R Console, then go to menu path File, and then to "Change dir...", or (2) use ```setwd ``` command.  (I do not use RStudio.)
+You can do this in two ways: (1) Go to R Console, then go to menu path File, and then to "Change dir...", or (2) use ```setwd() ``` command.  (I do not use RStudio.)
 
-Run:
+Once your directory is set properly run:
 ```r
-load("auxiliary.RData")
+load("tc.RData")
 ```
 
-Now, you can create the random forest model.  If you set the random number generator to the seed below, you'll most likely get the same results that I do in my paper.  The following command will take 2-3 minutes to run.
-```r
-set.seed(10203040)
-final_rf_model = ranger(critical_temp ~ ., data = train, mtry = 10, min.node.size = 1, num.trees = 1000)
-```
-
-Start predicting.  Try these two:
+**Step (5)** 
+Start predicting.  Try these:
 ```r
 predict_tc("Ba0.2La1.8Cu1O4", verbose = TRUE)
 predict_tc("MgB2")
+predict_tc("Hg")
+predict_tc("Ca0.5Sr0.5C6", verbose = T)
+predict_tc("NaSn2As2", verbose = T)
+predict_tc("H2S", verbose = T)
+predict_tc("FCl", verbose = T)
+predict_tc("mgB2", verbose = T)
 ```
 Setting ```verbose = TRUE``` will find materials similar to the one you entered.
 
-You probably don't want to recreate the random forest model every time.  You can save it and reuse it.  Just one warning, the file size will be big.  Run this:
+**Step (6)**
+Run the following to get the train data.  This train data was used to create the XGBoost model.
 ```r
-save.image("my_predictor.RData")
+write.csv(train, "train.csv", row.names = F)
 ```
-The object ```my_predictor.RData``` saved to your local drive will now have the ```predict_tc``` function in it.
 
-The next time you want to predict, run the following (making sure your path is set correctly):
+You can also run this to get a data file that has the chemical formulas broken up.
 ```r
-load("my_predictor.RData")
-library(ranger)
-library(CHNOSZ)
+write.csv(unique_m, "unique_m.csv", row.names = F)
 ```
-After running the three lines above, you can use ```predict_tc```.
+
