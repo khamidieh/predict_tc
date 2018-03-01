@@ -27,7 +27,7 @@ You need to make the R packages available to your current R session.  You need t
 library(xgboost)
 library(CHNOSZ)
 ```
-You need to do this *EVERY* time you start a new R session.
+One more time: You need to do this *EVERY* time you start a new R session.
 
 
 **Step (4)** 
