@@ -22,7 +22,7 @@ You only need to run the above command once unless you download a new R version.
 
 **Step (3)** 
 
-You need to make the R packages available to your current R session.  You need to do this *EVERY* time you start a new R session.  At prompt run:
+You need to make the R packages available to your current R session.  You need to do this *EVERY* time you start a new R session.  At the R prompt run:
 ```r
 library(xgboost)
 library(CHNOSZ)
