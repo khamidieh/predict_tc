@@ -15,7 +15,7 @@ Go to https://cloud.r-project.org/ to install the latest version of R.
 
 Once R has been installed, you need two R packages.  Open up the R gui and run the following command.  If a pop up window opens up with the title "Secure CRAN mirror", just pick "0-Cloud [https]" and hit OK.  
 ```r
-install.packages(c("ranger","CHNOSZ"))
+install.packages(c("xgboost","CHNOSZ"))
 ```
 You only need to run the above command once unless you download a new R version.
 
@@ -24,7 +24,7 @@ You only need to run the above command once unless you download a new R version.
 
 You need to make the R packages available to your current R session.  You need to do this *EVERY* time you start a new R session.  At prompt run:
 ```r
-library(ranger)
+library(xgboost)
 library(CHNOSZ)
 ```
 You need to do this *EVERY* time you start a new R session.
