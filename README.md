@@ -1,6 +1,6 @@
 # Predict the Critical Temperature of a Superconductor
 
-For detailed information about this project please see my paper at:
+For detailed information about this project please see my paper post here: predict_tc_kh_2.pdf.
 
 This readme file shows you how to set up and make predictions.  Step (6) shows you how to download the data.  If you just want to  download the data, just run steps (1), (4), and (6).
 
