@@ -1,6 +1,8 @@
 # Predict the Critical Temperature of a Superconductor
 
-For detailed information about this project please see my paper post here: [paper_3.pdf](https://github.com/khamidieh/predict_tc/blob/master/paper_3.pdf).  You can also see the slides presented at the March 2018 American Physical Society: [KamH_APS_March_2018.pdf](https://github.com/khamidieh/predict_tc/blob/master/KamH_APS_March_2018.pdf).
+For the most up to date information and for citation please see [here](https://www.sciencedirect.com/science/article/pii/S0927025618304877).  An arXiv version is [here](https://arxiv.org/abs/1803.10260).  You can also see the slides presented at the March 2018 American Physical Society: [KamH_APS_March_2018.pdf](https://github.com/khamidieh/predict_tc/blob/master/KamH_APS_March_2018.pdf).
+
+All the code I used is now available in the file script main_script_production_9.R.  Be careful blindly copying and running this code; some chunks may take days to run.
 
 
 This readme file shows you how to set up and make predictions.  Step (6) shows you how to download the data.  If you just want to  download the data, just run steps (1), (4), and (6).
